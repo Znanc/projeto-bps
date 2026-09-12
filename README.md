@@ -149,12 +149,25 @@ Após a preparação dos dados, foram criadas medidas no Power BI utilizando DAX
 
 Foram definidos os seguintes indicadores:
 
-Valor Total das Compras: soma dos valores totais registrados nas compras.
-Quantidade Total: soma das quantidades adquiridas.
-Preço Unitário Médio: média dos preços unitários registrados.
-Total de Registros: quantidade de registros presentes na base consolidada.
-Total de Fornecedores: quantidade distinta de fornecedores, considerando o CNPJ.
+- **Valor Total das Compras:** soma dos valores totais registrados nas compras.
+- **Quantidade Total:** soma das quantidades adquiridas.
+- **Preço Unitário Médio:** média dos preços unitários registrados.
+- **Preço Unitário Mediano:** mediana dos preços unitários registrados.
+- **Total de Registros:** quantidade de registros presentes na base consolidada.
+- **Total de Fornecedores:** quantidade distinta de fornecedores, considerando o CNPJ.
 
-As medidas foram testadas individualmente por meio de cartões no Power BI para verificar os resultados antes da construção dos demais visuais.
+Para cada indicador foi utilizada a agregação mais adequada. Os valores totais e as quantidades foram somados, enquanto os preços unitários foram analisados por média e mediana. Para os registros foi utilizada contagem e, para os fornecedores, contagem distinta.
 
-O preço unitário médio será utilizado apenas como indicador geral. Nas análises de variação de preços, serão considerados também fatores como produto, apresentação, fornecedor, instituição e período, pois diferenças de preço não representam, isoladamente, economia, sobrepreço ou irregularidade.
+O preço unitário não foi somado, pois essa operação não representa uma informação válida para a análise.
+
+As medidas foram testadas inicialmente por meio de cartões no Power BI. Também foi criada uma tabela de conferência por ano, de 2020 a 2026, para verificar se os indicadores estavam respondendo corretamente aos filtros e às agregações.
+
+A média e a mediana foram mantidas para a análise dos preços unitários, pois foram observadas diferenças relevantes entre os dois indicadores, indicando a presença de valores que podem influenciar a média.
+
+### Critérios para comparação de preços
+
+O preço unitário médio será utilizado apenas como indicador geral. Para a análise de variação de preços, as comparações serão realizadas preferencialmente entre registros do mesmo código CATMAT, considerando também a unidade de fornecimento e as características de apresentação do produto.
+
+Também poderão ser considerados fatores como fornecedor, instituição e período da compra.
+
+As diferenças de preço encontradas serão utilizadas como oportunidades de investigação e não serão interpretadas isoladamente como economia, sobrepreço ou irregularidade.
