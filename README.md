@@ -79,3 +79,20 @@ Para direcionar a construção do dashboard, foram definidas as seguintes pergun
 7. Como os preços unitários variam ao longo do período analisado?
 8. Quais modalidades de compra são mais utilizadas?
 9. Existem diferenças relevantes de preços entre produtos comparáveis, considerando fornecedores, instituições e períodos diferentes?
+
+### Verificação dos formatos dos dados
+
+Também foi realizada uma verificação inicial dos principais campos que serão utilizados no dashboard.
+
+Os tipos encontrados foram consistentes entre os arquivos de 2020 a 2026:
+
+- `ano_compra`: número inteiro
+- `dt_compra`: campo de texto no arquivo original, no formato dia/mês/ano
+- `qt_medicamento`: número inteiro
+- `vl_preco_unitario`: número decimal
+- `vl_preco_total`: número decimal
+- Campos de localização, instituições, produtos, fornecedores e modalidades: texto
+
+Durante essa análise inicial, também foram identificados alguns valores ausentes no campo de instituição compradora em determinados anos. Esses casos serão investigados e tratados na etapa de preparação dos dados.
+
+A coluna de data será convertida para o tipo Data durante o tratamento no Power Query.
